@@ -14,6 +14,7 @@
 		5A9813D81F9257590046A9BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A9813D61F9257590046A9BC /* LaunchScreen.storyboard */; };
 		5A9813E01F9258CB0046A9BC /* PickUpLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9813DF1F9258CB0046A9BC /* PickUpLineCell.swift */; };
 		5A9813E21F925B830046A9BC /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9813E11F925B830046A9BC /* AlertService.swift */; };
+		911D279021289B680036F141 /* PickUpLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911D278F21289B680036F141 /* PickUpLine.swift */; };
 		A6D2A2A469783F4E4628D92D /* Pods_Pick_Up_Lines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7010BFF167E011C6DFBC27D0 /* Pods_Pick_Up_Lines.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		5A9813E11F925B830046A9BC /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		7010BFF167E011C6DFBC27D0 /* Pods_Pick_Up_Lines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pick_Up_Lines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		781753C93081886B2914E8E1 /* Pods-Pick Up Lines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pick Up Lines.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pick Up Lines/Pods-Pick Up Lines.release.xcconfig"; sourceTree = "<group>"; };
+		911D278F21289B680036F141 /* PickUpLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpLine.swift; sourceTree = "<group>"; };
 		F1110B579CEC7FF0EE868D8F /* Pods-Pick Up Lines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pick Up Lines.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pick Up Lines/Pods-Pick Up Lines.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 				5A9813D91F9257590046A9BC /* Info.plist */,
 				5A9813DF1F9258CB0046A9BC /* PickUpLineCell.swift */,
 				5A9813E11F925B830046A9BC /* AlertService.swift */,
+				911D278F21289B680036F141 /* PickUpLine.swift */,
 			);
 			path = "Pick Up Lines Proto";
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			files = (
 				5A9813D01F9257590046A9BC /* ViewController.swift in Sources */,
 				5A9813E01F9258CB0046A9BC /* PickUpLineCell.swift in Sources */,
+				911D279021289B680036F141 /* PickUpLine.swift in Sources */,
 				5A9813E21F925B830046A9BC /* AlertService.swift in Sources */,
 				5A9813CE1F9257590046A9BC /* AppDelegate.swift in Sources */,
 			);
@@ -351,10 +355,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5K99777NES;
+				DEVELOPMENT_TEAM = H8BQMV59BX;
 				INFOPLIST_FILE = "Pick Up Lines Proto/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kiloloco.Pick-Up-Lines";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joea.NoteTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -367,10 +371,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5K99777NES;
+				DEVELOPMENT_TEAM = H8BQMV59BX;
 				INFOPLIST_FILE = "Pick Up Lines Proto/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kiloloco.Pick-Up-Lines";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joea.NoteTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
