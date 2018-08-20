@@ -43,21 +43,21 @@ class AlertService {
     }
     
     static func updateAlert(in vc: UIViewController,
-                            pickUpLine: Any,
+                            pickUpLine: PickUpLine,
                             completion: @escaping (String, Int?, String?) -> Void) {
         
         let alert = UIAlertController(title: "Update Line", message: nil, preferredStyle: .alert)
         alert.addTextField { (lineTF) in
             lineTF.placeholder = "Enter Pick Up Line"
-            lineTF.text = ""
+            lineTF.text = pickUpLine.line
         }
         alert.addTextField { (scoreTF) in
             scoreTF.placeholder = "Enter Score"
-            scoreTF.text = ""
+            scoreTF.text = pickUpLine.scoreString()
         }
         alert.addTextField { (emailTF) in
             emailTF.placeholder = "Enter Email"
-            emailTF.text = ""
+            emailTF.text = pickUpLine.email
         }
         
         let action = UIAlertAction(title: "Update", style: .default) { (_) in

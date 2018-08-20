@@ -22,6 +22,10 @@ import RealmSwift
         self.email = email
     }
 
+    func scoreString() -> String? {
+        guard let score = score.value else {return nil}
+        return String(score)
+    }
 
 
 }

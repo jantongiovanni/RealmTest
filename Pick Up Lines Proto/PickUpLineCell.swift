@@ -14,10 +14,10 @@ class PickUpLineCell: UITableViewCell {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
-    func configure(with pickUpLine: Any) {
-        lineLabel.text = ""
-        scoreLabel.text = ""
-        emailLabel.text = ""
+    func configure(with pickUpLine: PickUpLine) {
+        lineLabel.text = pickUpLine.line
+        scoreLabel.text = pickUpLine.scoreString()
+        emailLabel.text = pickUpLine.email
     }
 
 }

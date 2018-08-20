@@ -13,15 +13,33 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var pickUpLines: Results<PickUpLine>!
+    var notificationToken: NotificationToken?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        //read fron a realm file
+        let realm = RealmService.shared.realm
+        pickUpLines = realm.objects(PickUpLine.self)
+        
+        //realm notifies you whenever there is a change in the ui
+        notificationToken = realm.observe { (notification, realm) in
+            self.tableView.reloadData()
+            //returns notification token
+        }
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        notificationToken?.invalidate()
+    }
 
     @IBAction func onAddTapped() {
         AlertService.addAlert(in: self) { (line, score, email) in
-            print(line, score, email)
+
+            let newPickUpLine = PickUpLine(line: line, score: score, email: email)
+            RealmService.shared.create(newPickUpLine)
         }
     }
 
@@ -30,11 +48,13 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return pickUpLines.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PickUpLineCell") as? PickUpLineCell else { return UITableViewCell() }
+        let pickUpLine = pickUpLines[indexPath.row]
+        cell.configure(with: pickUpLine)
         return cell
     }
     
