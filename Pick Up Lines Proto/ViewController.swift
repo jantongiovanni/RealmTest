@@ -28,11 +28,16 @@ class ViewController: UIViewController {
             self.tableView.reloadData()
             //returns notification token
         }
+        
+        RealmService.shared.observeRealmErrors(in: self) { (error) in
+            print(error ?? "no error detected")
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         notificationToken?.invalidate()
+        RealmService.shared.stopObservingErrors(in: self)
     }
 
     @IBAction func onAddTapped() {
@@ -66,11 +71,18 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected")
+        let pickUpLine = pickUpLines[indexPath.row]
+        AlertService.updateAlert(in: self, pickUpLine: pickUpLine) { (line, score, email) in
+            let dict: [String: Any?] = ["line": line, "score": score, "email": email]
+            RealmService.shared.update(pickUpLine, with: dict)
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         print("delete")
+        let pickUpLine = pickUpLines[indexPath.row]
+        RealmService.shared.delete(pickUpLine)
     }
 }
 
